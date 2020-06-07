@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51db10fc-48be-436f-9444-8b2a91882318" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="51db10fc-48be-436f-9444-8b2a91882318" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,12 +58,26 @@
       <workItem from="1591190061489" duration="11621000" />
       <workItem from="1591262359709" duration="23512000" />
       <workItem from="1591353616714" duration="11284000" />
-      <workItem from="1591533089972" duration="15522000" />
+      <workItem from="1591533089972" duration="16339000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1591551909546</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591551909546</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="236" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591287394560">
@@ -73,6 +85,10 @@
     </state>
     <state x="236" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.803@0.23.1440.803" timestamp="1591287394560" />
     <state x="236" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.807@0.23.1440.807" timestamp="1591110597773" />
+    <state x="277" y="23" key="CommitChangelistDialog2" timestamp="1591551909249">
+      <screen x="0" y="23" width="1440" height="805" />
+    </state>
+    <state x="277" y="23" key="CommitChangelistDialog2/0.23.1440.805@0.23.1440.805" timestamp="1591551909249" />
     <state x="57" y="163" key="IDE.errors.dialog" timestamp="1591004164113">
       <screen x="0" y="23" width="1440" height="799" />
     </state>
@@ -82,6 +98,10 @@
       <screen x="0" y="23" width="1440" height="799" />
     </state>
     <state x="273" y="61" key="SettingsEditor/0.23.1440.799@0.23.1440.799" timestamp="1591004142626" />
+    <state x="300" y="173" key="Vcs.Push.Dialog.v2" timestamp="1591552563321">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="300" y="173" key="Vcs.Push.Dialog.v2/0.23.1440.800@0.23.1440.800" timestamp="1591552563321" />
     <state x="385" y="146" width="670" height="676" key="search.everywhere.popup" timestamp="1591134794235">
       <screen x="0" y="23" width="1440" height="799" />
     </state>
