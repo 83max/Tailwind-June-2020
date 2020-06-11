@@ -36,7 +36,7 @@
             <p class="text-center text-3xl sm:text-5xl max-w-3xl m-auto lg:text-3xl text-white my-8 sm:my-20 lg:my-8">Квартиры бизнес класса от 5,22 млн. руб!</p>
 
             <!--  Button on Page One          -->
-            <p class="text-center"><span class="border border-yellow-400 py-6 px-1 sm:pt-22 sm:pb-16 sm:px-2 lg:py-6 lg:px-1"><button class="bg-yellow-400 text-base px-10 py-4 sm:text-5xl sm:px-32 sm:py-10 lg:text-base lg:px-10 lg:py-4">Узнать подробности!</button></span></p>
+            <p class="text-center"><span class="border border-yellow-400 py-6 px-1 sm:pt-22 sm:pb-16 sm:px-2 lg:py-6 lg:px-1"><button class="bg-yellow-400 text-base px-10 py-4 sm:text-5xl sm:px-32 sm:py-10 lg:text-base lg:px-10 lg:py-4" id="btnone">Узнать подробности!</button></span></p>
 
             <div class="hidden sm:hidden md:hidden lg:block border-yellow-400 border-2 rounded-lg mt-48 max-w-sssss mx-auto">
 
@@ -62,7 +62,8 @@
 
             <p class="pb-4 sm:pb-16 font-bold sm:text-4xl sm:leading-snug lg:text-base lg:pb-6">Срок ввода в эксплуатацию - 1 кв. 2021 года.</p>
 
-            <p class="py-3 text-green-800 text-xl font-bold text-center border-solid border border-green-800 lg:border-none sm:py-4 sm:text-5xl lg:text-base lg:text-left"><span class="lg:border-green-800 lg:border-solid lg:border lg:py-3 lg:px-5">Заказать просмотр</span></p>
+            <p class="py-3 cursor-pointer text-green-800 text-xl font-bold text-center border-solid border border-green-800 lg:border-none sm:py-4 sm:text-5xl lg:text-base lg:text-left" id="btntwo"><span class="lg:border-green-800 lg:border-solid lg:border lg:py-3 lg:px-5">Заказать просмотр</span></p>
+
         </div>
 
 <!--       3. Page Three (Green Background)-->
@@ -109,7 +110,7 @@
 
         <p class="pb-6 text-white sm:pb-16 sm:text-4xl sm:leading-snug lg:text-base lg:pb-6">Оставьте контактные данные и мы обязательно свяжемся с вами</p>
 
-        <p class="mb-6 lg:mb:0 text-white text-lg text-center bg-green-800 lg:bg-transparent border-solid border border-green-800 lg:border-none py-2 sm:py-4 sm:text-5xl lg:text-base lg:text-left"><span class="lg:bg-green-800 lg:border-green-800 lg:border-solid lg:border lg:py-3 lg:px-8">Заказать просмотр</span></p>
+        <p class="mb-6 lg:mb:0 cursor-pointer text-white text-lg text-center bg-green-800 lg:bg-transparent border-solid border border-green-800 lg:border-none py-2 sm:py-4 sm:text-5xl lg:text-base lg:text-left" id="btnthree"><span class="lg:bg-green-800 lg:border-green-800 lg:border-solid lg:border lg:py-3 lg:px-8">Заказать просмотр</span></p>
 
         <div class="hidden lg:flex">
 
@@ -251,7 +252,7 @@
 
     <p class="pb-6 text-white sm:pb-16 sm:text-4xl sm:leading-snug lg:text-base lg:pb-6">Оставьте контактные данные и мы обязательно свяжемся с вами</p>
 
-    <p class="mb-6 sm:mb-16 lg:mb-6 text-white text-lg text-center bg-green-800 lg:bg-transparent border-solid border border-green-800 lg:border-none py-2 sm:py-4 sm:text-5xl lg:text-base lg:text-left"><span class="lg:bg-green-800 lg:border-green-800 lg:border-solid lg:border lg:py-3 lg:px-8">Заказать просмотр</span></p>
+    <p class="mb-6 sm:mb-16 lg:mb-6 cursor-pointer text-white text-lg text-center bg-green-800 lg:bg-transparent border-solid border border-green-800 lg:border-none py-2 sm:py-4 sm:text-5xl lg:text-base lg:text-left" id="btnfour"><span class="lg:bg-green-800 lg:border-green-800 lg:border-solid lg:border lg:py-3 lg:px-8">Заказать просмотр</span></p>
 
     <div class="flex">
 
@@ -292,6 +293,92 @@
 </div>
 
 </div>
+
+<!--11. Page Eleventh (Green Background - comments)-->
+
+<div class="p-8 bg-green-800 flex items-center justify-center" id="contactspage">
+    <div class="w-full max-w-2xl">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2 sm:text-3xl lg:text-sm" for="name">
+                    Имя
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="clientsname" type="text" placeholder="Имя" onclick="this.value= '' ">
+            </div>
+
+            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 sm:text-3xl lg:text-sm" for="comment">
+                        Комментарий
+                    </label>
+                    <textarea class="resize-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="comment" id="comment" cols="30" rows="10" placeholder="Комментарий" onclick="this.value= '' "></textarea>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button onclick="getAndSetVal();" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline sm:text-3xl lg:text-sm" id="sendcomment" type="button">
+                        Отправить
+                    </button>
+                </div>
+            </form>
+    </div>
+</div>
+
+<!--12. Page Twelfth  (White Background - client's comments)-->
+
+<div class="p-8 bg-white text-center">
+    <p class="text-green-800 text-3xl font-bold pb-3 sm:pb-8 sm:text-5xl lg:text-3xl lg:pb-4">КОММЕНТАРИИ КЛИЕНТОВ</p>
+
+    <div class="w-full max-w-2xl h-64 m-auto border-gray-400 border-solid border">
+
+        <p class="pt-4 pl-8 pb-4 text-left text-gray-700 text-sm font-bold sm:text-3xl lg:text-sm">Имя</p>
+
+        <p class="max-w-xl text-left text-green-800 sm:text-3xl lg:text-sm"><input class="ml-8 max-w-xl text-left text-green-800 sm:text-3xl lg:text-sm" type="text" id="pasteclientsname" onclick="this.value='' "></p>
+
+        <p class="pt-4 pl-8 pb-4 text-left text-gray-700 text-sm font-bold sm:text-3xl lg:text-sm" >Комментарий</p>
+
+        <p class="max-w-xl text-left text-green-800 sm:text-3xl lg:text-sm"><input class="ml-8 max-w-xl text-left text-green-800 sm:text-3xl lg:text-sm" type="text" id="pasteclientscomment" onclick="this.value='' "></p>
+
+
+    </div>
+
+</div>
+
+<script>
+/* Scrolling variables */
+    let startscrollone = document.getElementById("btnone");
+    let startscrolltwo = document.getElementById("btntwo");
+    let startscrollthree = document.getElementById("btnthree");
+    let startscrollfour = document.getElementById("btnfour");
+    let into = document.getElementById("contactspage");
+
+/* Scrolling methods */
+
+    startscrollone.addEventListener("click", function () {
+        into.scrollIntoView({behavior:"smooth"});
+    });
+
+    startscrolltwo.addEventListener("click", function () {
+        into.scrollIntoView({behavior:"smooth"});
+    });
+
+    startscrollthree.addEventListener("click", function () {
+        into.scrollIntoView({behavior:"smooth"});
+    });
+
+    startscrollfour.addEventListener("click", function () {
+        into.scrollIntoView({behavior:"smooth"});
+    });
+
+/* "Type in / Paste in" methods */
+
+    function getAndSetVal () {
+        let paste = document.getElementById("clientsname").value;
+        let paste2 = document.getElementById("comment").value;
+        document.getElementById("pasteclientsname").value = paste;
+        document.getElementById("pasteclientscomment").value = paste2;
+    }
+
+</script>
 
 </body>
 </html>
