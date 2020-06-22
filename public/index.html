@@ -298,28 +298,35 @@
 
 <div class="p-8 bg-green-800 flex items-center justify-center" id="contactspage">
     <div class="w-full max-w-2xl">
+
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2 sm:text-3xl lg:text-sm">
+                    Дата
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="typeDate" type="date" placeholder="">
+            </div>
+
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2 sm:text-3xl lg:text-sm" for="name">
                     Имя
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="clientsname" type="text" placeholder="Имя" onclick="this.value= '' ">
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="typeName" type="text" placeholder="Имя">
             </div>
 
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2 sm:text-3xl lg:text-sm" for="comment">
                         Комментарий
                     </label>
-                    <textarea class="resize-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="comment" id="comment" cols="30" rows="10" placeholder="Комментарий" onclick="this.value= '' "></textarea>
+                    <textarea class="resize-none shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="comment" id="typeComment" cols="30" rows="10" placeholder="Комментарий"></textarea>
                 </div>
 
                 <div class="flex items-center justify-between">
-                    <button onclick="getAndSetVal();" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline sm:text-3xl lg:text-sm" id="sendcomment" type="button">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline sm:text-3xl lg:text-sm" onclick="getInfo()" id="btnsend" type="button">
                         Отправить
                     </button>
                 </div>
-            </form>
+        </form>
     </div>
 </div>
 
@@ -328,23 +335,18 @@
 <div class="p-8 bg-white text-center">
     <p class="text-green-800 text-3xl font-bold pb-3 sm:pb-8 sm:text-5xl lg:text-3xl lg:pb-4">КОММЕНТАРИИ КЛИЕНТОВ</p>
 
-    <div class="w-full max-w-2xl h-64 m-auto border-gray-400 border-solid border">
+    <div class="w-full max-w-6xl h-64 m-auto <!--border-gray-400 border-solid border-->">
 
-        <p class="pt-4 pl-8 pb-4 text-left text-gray-700 text-sm font-bold sm:text-3xl lg:text-sm">Имя</p>
-
-        <p class="text-left text-green-800 sm:text-3xl lg:text-sm"><input class="ml-8 w-3/4 text-left text-green-800 sm:text-3xl lg:text-sm" type="text" id="pasteclientsname" onclick="this.value='' "></p>
-
-        <p class="pt-4 pl-8 pb-4 text-left text-gray-700 text-sm font-bold sm:text-3xl lg:text-sm" >Комментарий</p>
-
-        <p class="text-left text-green-800 sm:text-3xl lg:text-sm"><textarea class="ml-8 w-3/4 resize-none text-left text-green-800 sm:text-3xl lg:text-sm" type="text" id="pasteclientscomment" onclick="this.value='' "> </textarea> </p>
-
+        <div class="pt-4 pl-8 pb-4 text-left text-gray-700 text-sm font-bold sm:text-3xl lg:text-sm" id="pasteForm"> </div>
 
     </div>
 
 </div>
 
 <script>
+
 /* Scrolling variables */
+
     let startscrollone = document.getElementById("btnone");
     let startscrolltwo = document.getElementById("btntwo");
     let startscrollthree = document.getElementById("btnthree");
@@ -369,14 +371,37 @@
         into.scrollIntoView({behavior:"smooth"});
     });
 
-/* "Type in / Paste in" methods */
+/* "Type in / Paste in" function */
 
-    function getAndSetVal () {
-        let paste = document.getElementById("clientsname").value;
-        let paste2 = document.getElementById("comment").value;
-        document.getElementById("pasteclientsname").value = paste;
-        document.getElementById("pasteclientscomment").value = paste2;
-    }
+function getInfo() {
+    let enterDate = document.getElementById("typeDate").value;
+    let enterName = document.getElementById("typeName").value;
+    let enterComment = document.getElementById("typeComment").value;
+
+    let newDiv = document.createElement("div");
+    let textHere = document.createTextNode(enterDate);
+    newDiv.appendChild(textHere);
+    let adding = document.getElementById("pasteForm");
+    adding.appendChild(newDiv);
+
+    let newDiv1 = document.createElement("div");
+    let textHere1 = document.createTextNode(enterName);
+    newDiv1.appendChild(textHere1);
+    let adding1 = document.getElementById("pasteForm");
+    adding1.appendChild(newDiv1);
+
+    let newDiv2 = document.createElement("div");
+    let textHere2 = document.createTextNode(enterComment);
+    newDiv2.appendChild(textHere2);
+    let adding2 = document.getElementById("pasteForm");
+    adding2.appendChild(newDiv2);
+
+    let br = document.createElement("br");
+    adding.appendChild(br);
+    
+}
+
+
 
 </script>
 
