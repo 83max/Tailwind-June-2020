@@ -399,13 +399,12 @@ function getInfo() {
     let br = document.createElement("br");
     adding.appendChild(br);
 
-    /* Local Storage */
+    localStorage.setItem(enterName, enterComment);
 
-    localStorage.setItem("enterDate", enterDate);
-    localStorage.setItem("enterName", enterName);
-    localStorage.setItem("enterComment", enterComment);
-    
 }
+
+
+
 
 
 
