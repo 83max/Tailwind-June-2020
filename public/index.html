@@ -371,7 +371,7 @@
         into.scrollIntoView({behavior:"smooth"});
     });
 
-/* "Type in / Paste in" function */
+/* "Type in comments / Paste in comments" function */
 
 function getInfo() {
     let enterDate = document.getElementById("typeDate").value;
@@ -398,6 +398,12 @@ function getInfo() {
 
     let br = document.createElement("br");
     adding.appendChild(br);
+
+    /* Local Storage */
+
+    localStorage.setItem("enterDate", enterDate);
+    localStorage.setItem("enterName", enterName);
+    localStorage.setItem("enterComment", enterComment);
     
 }
 
