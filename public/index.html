@@ -300,12 +300,12 @@
     <div class="w-full max-w-2xl">
 
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="mb-4">
+            <!--<div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2 sm:text-3xl lg:text-sm">
                     Дата
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="typeDate" type="date" placeholder="">
-            </div>
+            </div>-->
 
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2 sm:text-3xl lg:text-sm" for="name">
@@ -371,15 +371,128 @@
         into.scrollIntoView({behavior:"smooth"});
     });
 
-/* "Type in comments / Paste in comments" function */
+/* "Type in comments / Paste in comments" */
 
-function getInfo() {
-    let enterDate = document.getElementById("typeDate").value;
+    let comments = [];
+
+    loadComments();
+
+    function getInfo(){
+        let enterName = document.getElementById("typeName");
+        let enterComment = document.getElementById("typeComment");
+
+        let today = new Date();
+
+        let date = today.getDate();
+        let month = today.getMonth() + 1;
+        let year = today.getFullYear();
+
+        let hour = today.getHours();
+        let minute = today.getMinutes();
+
+        if (date < 10) {
+            date = '0' + date;
+        }
+
+        if (month < 10) {
+            month = '0' + month;
+        }
+
+        if (hour < 10) {
+            hour = '0' + hour;
+        }
+
+        if (minute < 10) {
+            minute = '0' + minute;
+        }
+
+        let currentDateAndTime = date + ":" + month + ":" + year + "\n" + hour + ":" + minute;
+
+
+        let comment = {
+            name : enterName.value,
+            text : enterComment.value,
+            time : currentDateAndTime
+        }
+
+        comments.push(comment);
+
+        saveComments();
+        showComments();
+
+    }
+
+    function saveComments(){
+        localStorage.setItem("comments", JSON.stringify(comments));
+    }
+
+    function loadComments(){
+        comments = JSON.parse(localStorage.getItem("comments"));
+
+    if (comments === null) {
+        comments = [];
+    }
+
+    showComments();
+
+    }
+
+    function showComments(){
+
+    let commentField = document.getElementById("pasteForm");
+
+    let adding = "";
+
+    comments.forEach(function(item){
+        adding += `<p>${item.time} </p>`;
+        adding += `<p>${item.name} </p>`;
+        adding += `<p>${item.text} </p>`;
+        adding += `</br>`;
+    });
+
+    commentField.innerHTML = adding;
+
+}
+
+
+
+/*function getInfo() {
+    /!*let enterDate = document.getElementById("typeDate").value;*!/
+
+    let today = new Date();
+
+    let date = today.getDate();
+    let month = today.getMonth() + 1;
+    let year = today.getFullYear();
+
+    let hour = today.getHours();
+    let minute = today.getMinutes();
+
+    if (date < 10) {
+        date = '0' + date;
+    }
+
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    if (hour < 10) {
+        hour = '0' + hour;
+    }
+
+    if (minute < 10) {
+        minute = '0' + minute;
+    }
+
+    let currentDateAndTime = date + ":" + month + ":" + year + "\n" + hour + ":" + minute;
+
+    let pasteDateAndTime = document.innerHTML = currentDateAndTime;
+
     let enterName = document.getElementById("typeName").value;
     let enterComment = document.getElementById("typeComment").value;
 
     let newDiv = document.createElement("div");
-    let textHere = document.createTextNode(enterDate);
+    let textHere = document.createTextNode(pasteDateAndTime);
     newDiv.appendChild(textHere);
     let adding = document.getElementById("pasteForm");
     adding.appendChild(newDiv);
@@ -401,7 +514,7 @@ function getInfo() {
 
     localStorage.setItem(enterName, enterComment);
 
-}
+}*/
 
 
 
